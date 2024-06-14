@@ -13,8 +13,13 @@ def resgitrar_trabajador():
     print("TRABAJADOR REGISTRADO CON ÉXITO") 
 
 def listar_trabajadores():
-    pass
-
+    if len(trabajadores)==0:
+        print("error!!!lista vacia, registre un trabajador en la opción 1 !!!")
+    else:
+        print("\tLISTA DE TRABAJADORES")
+        for t in trabajadores:
+            print (f"NOMBRE: {t[0]}\n CARGO: {t[1]}\n BRUTO: {t[2]}\n SALUD: {t[3]}\n AFP: {t[4]}\n LIQUIDO {t[5]}\n" )
+            
 def exportar_archivo_txt():
     pass
 def salir():

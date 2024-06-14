@@ -19,9 +19,20 @@ def listar_trabajadores():
         print("\tLISTA DE TRABAJADORES")
         for t in trabajadores:
             print (f"NOMBRE: {t[0]}\n CARGO: {t[1]}\n BRUTO: {t[2]}\n SALUD: {t[3]}\n AFP: {t[4]}\n LIQUIDO {t[5]}\n" )
-            
+
 def exportar_archivo_txt():
-    pass
+    if len(trabajadores)==0:
+        print(" LISTA VACIA, RESGITRE UN TRABAJADOR EN LA OPCION 1 ")
+    else:
+        cargo= int(input("ingrese cargobop para planilla (1:CEO, 2:DESARROLLADOR, 3: ANALISTA, 4:TODOS)"))
+        if cargo==4:
+            nombre_archivo=str(input("INGRESE NOMBRE DEL ARCHIVO: "))
+            with open("todos chambeadores"+".txt", "w") as archivo:
+                for t in trabajadores:
+                    archivo.write(f"NOMBRE: {t[0]}\n CARGO: {t[1]}\n BRUTO: {t[2]}\n SALUD: {t[3]}\n AFP: {t[4]}\n LIQUIDO {t[5]}\n" )
+            print("ARCVHIVO GUARDADO CON EXTO!!!!!")
+        else:
+            pass
 def salir():
     print ("GRACIAS HASTA LUEGO!!!")
     exit()
